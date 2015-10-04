@@ -29,7 +29,8 @@ int exec(int op, int a, int b) {
 if (op<0)
 {c=a;
 a=b;
-b=c;}
+b=c;
+op=op*(-1);}
 else a=a;
 b=b;
    switch(op){
