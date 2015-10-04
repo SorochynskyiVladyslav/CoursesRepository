@@ -1,12 +1,10 @@
-#define _USE_MATH_DEFINES
+#define _USE_MATH_DEFINES   //виявив, що це необхідність для константи пі
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 
-int exec(int, int, int);
-
-int mymin(int a, int b){
-if (a>b) return b;
+int mymin(int a, int b){    //виявив, що min та max не працюють
+if (a>b) return b;          //тому написав функціі, що за дією ідентичні до min та max
 else return a;
 }
 int mymax(int a, int b){
@@ -14,16 +12,6 @@ if (a>b) return a;
 else return b;
 }
 
-int main() {
-    int opval = 0, aval = 0, bval = 0;
-    int resultVal;
-
-    resultVal = exec(opval, aval, bval);
-
-    printf("%i", resultVal);
-    return 0;
-}
-// copy the code below to the answers files and add #include <math.h> at the beginning
 int exec(int op, int a, int b) {
    int result, c, datatype;
 if (op<0)
