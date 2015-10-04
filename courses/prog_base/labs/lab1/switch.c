@@ -91,7 +91,7 @@ b=b;
        if (b==6) result=0;
        else {if ((a==1/2)||(a==3/2))
             result=0;
-       else result=tan(a*M_PI)/((6-b)*7);}
+       else result=tan(a*M_PI)/((6-b)*2);}
        break;
    default:
        if (op<100)
