@@ -21,7 +21,8 @@ int satisfies(int a, int b, int c) {
      if (modmin==a) sum2=b+c;
      else if (modmin==b) sum2=a+c;
           else sum2=a+b;
-     if ((sum2<-256)&&(modmin<256)&&(modmin%2==0))
+     if ((sum2<-256)&&(modmin<256)&&(modmin==2)&&(modmin==4)&&(modmin==8)&&(modmin==16)&&
+         (modmin==32)&&(modmin==64)&&(modmin==128)&&(modmin==256))
         result=1;
      else if (((abs(sum2)-modmin)<16)||(abs(sum2)<16))
         result=1;
