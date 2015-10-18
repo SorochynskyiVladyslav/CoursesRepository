@@ -81,15 +81,12 @@ b=b;
        case 7:
            datatype=sizeof(double);
            break;
-       default:
-           printf("error");
-           break;
            }
        result=abs(a)*datatype;
        break;
    case 11:
        if (b==6) result=0;
-       else {if ((a==1/2)||(a==3/2))
+       else {if ((a==0.5)||(a==1.5))
             result=0;
        else result=tan(a*M_PI)/((6-b)*2);}
        break;
