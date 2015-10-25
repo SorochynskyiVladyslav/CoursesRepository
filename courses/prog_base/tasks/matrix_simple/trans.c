@@ -6,7 +6,7 @@ void copyMatrix(int mat [4][4], int copymat[4][4]);
 void fillRand(int mat[4][4]);
 void rotateCW90(int mat[4][4]);
 void flipV(int mat[4][4]);
-void transposSide(int mat[4][4]);
+void transposMain(int mat[4][4]);
 /*
 int main()
 {   int mat[4][4];
@@ -14,15 +14,7 @@ int main()
     fillRand(mat);
     printMatrix(mat);
     puts (" ");
-    rotateCW90(mat);
-    printMatrix(mat);
-    printMatrix(mat);
-    puts (" ");
-    flipV(mat);
-    printMatrix(mat);
-    printMatrix(mat);
-    puts (" ");
-    transposSide(mat);
+    transposMain(mat);
     printMatrix(mat);
 
     return 0;
@@ -84,13 +76,13 @@ void flipV(int mat[4][4]){
  }
 }
 
-void transposSide(int mat[4][4]){
+void transposMain(int mat[4][4]){
  int copymat[4][4];
  int i, j;
  copyMatrix(mat, copymat);
  for (i=0; i<4; i++){
     for (j=0; j<4; j++){
-        mat[i][j]=copymat[3-j][3-i];
+        mat[i][j]=copymat[j][i];
     }
  }
 }
