@@ -28,7 +28,7 @@ for (i=0; i<4; i++){
     }
 }
 }
-
+/*
 void printMatrix(int mat[4][4]) {
     int i, j;
     int n = 4;
@@ -44,7 +44,7 @@ void printMatrix(int mat[4][4]) {
     }
     printf(" };\n");
 }
-
+*/
 void fillRand(int mat[4][4]){
         int i, j;
         for (i=0; i<4; i++) {
