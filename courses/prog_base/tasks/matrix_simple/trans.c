@@ -19,7 +19,7 @@ int main()
 
     return 0;
 }
-
+*/
 void copyMatrix(int mat[4][4], int copymat[4][4]) {
 int i, j;
 for (i=0; i<4; i++){
@@ -44,7 +44,7 @@ void printMatrix(int mat[4][4]) {
     }
     printf(" };\n");
 }
-*/
+
 void fillRand(int mat[4][4]){
         int i, j;
         for (i=0; i<4; i++) {
