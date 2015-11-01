@@ -37,7 +37,7 @@ char * h[] = {"a",
 "o",
 "u",
 "y"};
-const char * sfind=" ";
+const char sfind = " ";
 int flag, i;
 extr1=extraStr;
 p = strtok(extr1, sfind);
@@ -67,7 +67,7 @@ char * h[] = {"a",
  "o",
  "u",
  "y"};
-char sfind=" ";
+const char sfind = " ";
 int status = 0;
 int i;
     p = strtok(str, sfind);
