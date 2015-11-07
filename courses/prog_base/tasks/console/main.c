@@ -76,13 +76,13 @@ void color(HANDLE hConsole, int y){
             fmt = FOREGROUND_RED | FOREGROUND_INTENSITY;
             break;
         case 5 ... 9:
-            fmt = 0;
+            fmt = FOREGROUND_GREEN | FOREGROUND_INTENSITY;
             break;
         case 10 ... 14:
             fmt = FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_RED | FOREGROUND_INTENSITY;
             break;
         case 15 ... 19:
-            fmt = 0;
+            fmt = FOREGROUND_GREEN | FOREGROUND_INTENSITY;
             break;
         case 20 ... 24:
             fmt = FOREGROUND_RED | FOREGROUND_INTENSITY;
