@@ -73,19 +73,19 @@ void color(HANDLE hConsole, int y){
     int fmt = 0;
     switch(y){
         case 0 ... 4:
-            fmt = FOREGROUND_RED | FOREGROUND_INTENSITY;
+            fmt = BACKGROUND_RED | FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_RED | BACKGROUND_INTENSITY | FOREGROUND_INTENSITY;
             break;
         case 5 ... 9:
-            fmt = FOREGROUND_GREEN | FOREGROUND_INTENSITY;
-            break;
-        case 10 ... 14:
             fmt = FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_RED | FOREGROUND_INTENSITY;
             break;
+        case 10 ... 14:
+            fmt = BACKGROUND_BLUE | BACKGROUND_GREEN | BACKGROUND_RED | BACKGROUND_INTENSITY;
+            break;
         case 15 ... 19:
-            fmt = FOREGROUND_GREEN | FOREGROUND_INTENSITY;
+            fmt = FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_RED | FOREGROUND_INTENSITY;
             break;
         case 20 ... 24:
-            fmt = FOREGROUND_RED | FOREGROUND_INTENSITY;
+            fmt = BACKGROUND_RED | FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_RED | BACKGROUND_INTENSITY | FOREGROUND_INTENSITY;
             break;
         default:
             puts ("error, you`re out of console");
@@ -94,7 +94,7 @@ void color(HANDLE hConsole, int y){
 }
 
 void print(HANDLE hConsole, COORD pos, int x, int y){
-    const long SLEEP_MILLISECONDS = 15;
+    const long SLEEP_MILLISECONDS = 5;
     pos.X = x;
     pos.Y = y;
     SetConsoleCursorPosition(hConsole, pos);
