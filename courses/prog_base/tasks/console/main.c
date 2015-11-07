@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 #include <windows.h>
 
 void color(HANDLE hConsole, int y);
@@ -93,7 +94,7 @@ void color(HANDLE hConsole, int y){
 }
 
 void print(HANDLE hConsole, COORD pos, int x, int y){
-    const long SLEEP_MILLISECONDS = 25;
+    const long SLEEP_MILLISECONDS = 15;
     pos.X = x;
     pos.Y = y;
     SetConsoleCursorPosition(hConsole, pos);
