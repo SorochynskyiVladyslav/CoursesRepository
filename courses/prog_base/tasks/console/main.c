@@ -94,7 +94,7 @@ void color(HANDLE hConsole, int y){
 }
 
 void print(HANDLE hConsole, COORD pos, int x, int y){
-    const long SLEEP_MILLISECONDS = 5;
+    const long SLEEP_MILLISECONDS = 10;
     pos.X = x;
     pos.Y = y;
     SetConsoleCursorPosition(hConsole, pos);
