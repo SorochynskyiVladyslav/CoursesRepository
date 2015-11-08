@@ -13,8 +13,6 @@ int main()
     COORD pos;
     x = 79;
     y = 24;
-    pos.X = x;
-    pos.Y = y;
     while ((x != 0)||(y != 0)){
     /*last point*/
         if (y == 24 && x == 79){
@@ -22,9 +20,7 @@ int main()
         x--;
         }
     /*right diagonal starts*/
-    pos.X = x;
-    pos.Y = y;
-    SetConsoleCursorPosition(hConsole, pos);
+
     while (((y + 1) != 0) && (x != 80)){
     print(hConsole, pos, x, y);
     if ((y + 1) != 0)
@@ -41,9 +37,7 @@ int main()
         y--;
     }
     /*left diagonale starts*/
-    pos.X = x;
-    pos.Y = y;
-    SetConsoleCursorPosition(hConsole, pos);
+
     while (((x + 1) != 0) && (y != 25)){
     print(hConsole, pos, x, y);
     if ((x + 1) != 0)
