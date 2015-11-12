@@ -18,59 +18,65 @@ void lor(int arr1[], int arr2[], int res[], int size);
 int main()
 {
     int size, status, maxval, indexmean, indexmax, freqval, identity, less;
-    puts("==please, enter the size of arrays you want==");
+    printf("please, enter the size of arrays you want ");
     scanf("%i", &size);
+    puts("");
     int arr1[size], arr2[size], arr3[size], arr4[size], resor[size], residentity[size], resmult[size];
     float meanval;
 
     srand(time(NULL));
     fillRand1(arr1, size);
     fillRand1(arr2, size);
-    puts("array_1");
+
+    printf ("arr1  ");
     printArray(arr1, size);
-    puts("array_2");
-    printArray(arr2, size);
-    puts("");
+
     status = checkRand1(arr1, size);
-    if (status=1) puts ("all elements of array_1 lay in range [0...99]");
-    else puts ("NOT all elements of array_1 lay in range [0...99]");
-    puts("");
+    if (status=1) puts ("0 <= arr1 <= 99");
+    else puts ("NOT all elements of arr1 >=0 and <=99");
+
     meanval = meanValue(arr1, size);
-    printf ("mean value of array_1 is %f \n", meanval);
-    puts("");
+    printf ("mean value of arr1 = %f \n", meanval);
+
     maxval = maxValue(arr1, size);
-    printf ("maximum value of array_1 is %i \n", maxval);
-    puts("");
+    printf ("maxValue of arr1 = %i \n", maxval);
+
     indexmean = meanIndex(arr1, size);
-    printf ("index of the first closest value to the mean value of array_1 is %i \n", indexmean);
-    puts("");
+    printf ("meanIndex arr1 = %i \n", indexmean);
+
     indexmax = maxIndex(arr1, size);
-    printf ("index of the first max value of array_1 is %i \n", indexmax);
-    puts("");
+    printf ("maxIndex of arr1 = %i \n", indexmax);
+
     freqval = maxOccurance(arr1, size);
-    printf ("the most frequent element of array_1 is %i \n", freqval);
+    printf ("maxOccurance of arr1 = %i \n", freqval);
     puts("");
+
+    printf ("arr2  ");
+    printArray(arr2, size);
+
     identity = diff(arr1, arr2, residentity, size);
-    if (identity==1) puts("arrays are equal");
-    else puts ("arrays are NOT equal");
-    puts("");
+    if (identity==1) puts("arr1 = arr2");
+    else puts ("arr1 != arr2");
+
     mult(arr1, arr2, resmult, size);
-    printf ("array_1 multiplied by array_2 = ");
+    printf ("arr1 * arr2 = ");
     printArray(resmult, size);
-    puts("");
+
     less = lt(arr1, arr2, size);
-    if (less==1) puts ("all elements of array_1 are smaller than relative elemets of array_2");
-    else puts ("NOT all elements of array_1 are smaller than relative elemets of array_2");
-    puts ("");
+    if (less==1) puts ("all elements of arr1 < arr2");
+    else puts ("NOT all elements of arr1 < arr2");
+    puts("");
+
     fillRand3(arr3, size);
-    puts ("array_3");
-    printArray(arr3, size);
     fillRand3(arr4, size);
-    puts ("array_4");
+    printf ("arr3  ");
+    printArray(arr3, size);
+    printf ("arr4  ");
     printArray(arr4, size);
     puts("");
+
     lor(arr3, arr4, resor, size);
-    printf("array_3 OR array_4 = ");
+    printf("arr3 OR arr4 = ");
     printArray(resor, size);
 
     return 0;
