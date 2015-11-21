@@ -45,14 +45,17 @@ int main()
         writefunc (g);
         break;
     case 'd':
-        cent.X--;
+        cent.X++;
         bg();
         drawAxes (cent);
         drawGraph (cent, k, g);
         writefunc (g);
         break;
     case '=':
+        if (g == 2)
         k--;
+        if (g == 1)
+        k++;
         if (k == 0)
             k = 1;
         bg();
@@ -61,7 +64,10 @@ int main()
         writefunc (g);
         break;
     case '-':
+        if (g == 2)
         k++;
+        if (g == 1)
+        k--;
         if (k == 0)
             k = 1;
         bg();

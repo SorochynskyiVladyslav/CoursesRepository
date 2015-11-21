@@ -1,0 +1,4 @@
+use w, a, s, d to move graph
+press space to see another graph
+press - to reduce graph
+press = to enlarge graph
