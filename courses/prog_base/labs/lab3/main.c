@@ -70,7 +70,7 @@ int main()
         SetConsoleCursorPosition(hConsole, cmd);
         command = gets(com);
         SetConsoleCursorPosition(hConsole, scf);
-        printf ("                                                                             ");
+        printf ("                                                                                                         ");
 
         fflush(stdin);
         status = 0;
@@ -284,7 +284,7 @@ int main()
             scf.X = 5;
             scf.Y = size + 9;
         }
-        if (strcmp(command, "diogsum") == 0){
+        if (strcmp(command, "diagsum") == 0){
             scf.X = 20;
             scf.Y = size + 3;
             dgsum = undsum(p, size);
@@ -322,7 +322,7 @@ int main()
             printf("    ");
         }
         if (strcmp(command, "end") != 0 && strcmp(command, "clear") != 0 && strcmp(command, "random") != 0 && strcmp(command, "display") != 0 && strcmp(command, "transpose") != 0 && strcmp(command, "rotate") != 0 && strcmp(command, "sum") != 0 &&
-        strcmp(command, "colsum") != 0 && strcmp(command, "diogsum") != 0 && strcmp(command, "swingfirst") != 0 && strcmp(command, "swinglast") != 0 && strcmp(command, "swingcols") != 0 && strcmp(command, "help") != 0){
+        strcmp(command, "colsum") != 0 && strcmp(command, "diagsum") != 0 && strcmp(command, "swingfirst") != 0 && strcmp(command, "swinglast") != 0 && strcmp(command, "swingcols") != 0 && strcmp(command, "help") != 0){
             SetConsoleCursorPosition(hConsole, cmd);
             SetConsoleTextAttribute(hConsole, fer);
             printf ("                                                               ");

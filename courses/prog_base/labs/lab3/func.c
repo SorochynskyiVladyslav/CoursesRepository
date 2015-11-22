@@ -42,7 +42,7 @@ void callhelp(int size){
     printf("colsum");
     head.Y++;
     SetConsoleCursorPosition(hConsole, head);
-    printf("diogsum");
+    printf("diagsum");
     head.Y++;
     SetConsoleCursorPosition(hConsole, head);
     printf("swingfirst");
