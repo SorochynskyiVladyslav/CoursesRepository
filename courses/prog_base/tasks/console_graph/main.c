@@ -25,31 +25,15 @@ int main()
         switch (c){
     case 'w':
         cent.Y--;
-        bg();
-        drawAxes (cent);
-        drawGraph (cent, k, g);
-        writefunc (g);
         break;
     case 's':
         cent.Y++;
-        bg();
-        drawAxes (cent);
-        drawGraph (cent, k, g);
-        writefunc (g);
         break;
     case 'a':
         cent.X--;
-        bg();
-        drawAxes (cent);
-        drawGraph (cent, k, g);
-        writefunc (g);
         break;
     case 'd':
         cent.X++;
-        bg();
-        drawAxes (cent);
-        drawGraph (cent, k, g);
-        writefunc (g);
         break;
     case '=':
         if (g == 2)
@@ -58,10 +42,6 @@ int main()
         k++;
         if (k == 0)
             k = 1;
-        bg();
-        drawAxes (cent);
-        drawGraph (cent, k, g);
-        writefunc (g);
         break;
     case '-':
         if (g == 2)
@@ -70,19 +50,15 @@ int main()
         k--;
         if (k == 0)
             k = 1;
-        bg();
-        drawAxes (cent);
-        drawGraph (cent, k, g);
-        writefunc (g);
         break;
     case 32:
         g = (g == 1) ? 2 : 1;
-		bg();
-        drawAxes (cent);
-        drawGraph (cent, k, g);
-        writefunc (g);
         break;
     }
+    bg();
+    drawAxes (cent);
+    drawGraph (cent, k, g);
+    writefunc (g);
     }
     return 0;
 }
