@@ -75,7 +75,7 @@ int main()
         fflush(stdin);
         status = 0;
         if (strcmp(command, "end") == 0){
-            status = 2;
+            return 0;
         }
         if (strcmp(command, "clear") == 0){
             drawinterface(size);
@@ -334,5 +334,4 @@ int main()
             printf ("use help if you don`t know any commands");
         }
     }
-    return 0;
 }

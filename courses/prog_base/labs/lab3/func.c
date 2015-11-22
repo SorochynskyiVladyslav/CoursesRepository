@@ -55,6 +55,9 @@ void callhelp(int size){
     head.Y++;
     SetConsoleCursorPosition(hConsole, head);
     printf("help");
+    head.Y++;
+    SetConsoleCursorPosition(hConsole, head);
+    printf("end");
 
     SetConsoleTextAttribute(hConsole, fst);
     SetConsoleCursorPosition(hConsole, text);
@@ -101,6 +104,9 @@ void callhelp(int size){
     text.Y++;
     SetConsoleCursorPosition(hConsole, text);
     printf("display help");
+    text.Y++;
+    SetConsoleCursorPosition(hConsole, text);
+    printf("exit program");
 }
 
 void drawinterface(int size){
