@@ -130,7 +130,7 @@ void print(COORD cent, int x, int y){
     SetConsoleTextAttribute(hConsole, f);
     pos.X = cent.X + x;
     pos.Y = cent.Y - y;
-    if (pos.X >= 0 && pos.X <= 79){
+    if (pos.X >= 0 && pos.X <= 79 && pos.Y >= 0 && pos.Y <= 25){
     SetConsoleCursorPosition(hConsole, pos);
     printf(" ");
     }
@@ -157,14 +157,12 @@ void drawGraph (COORD cent, int k, int g){
 }
 
 void connection (COORD cent, int x, int y, int lx, int ly){
-    //right
 	if (ly < y){
 		while (ly < y){
 			print(cent, lx, ly);
 			ly++;
 		}
 	}
-	//left
 	if (ly > y){
 		while (y < ly){
 			print(cent, x, y);
