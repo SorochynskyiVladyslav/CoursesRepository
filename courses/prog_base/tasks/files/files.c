@@ -3,7 +3,7 @@
 void fprocess(const char * pread, const char * pwrite){
     int i, x1, x2, y1, y2;
     FILE * fp = NULL;
-    fp = fopen("pread.txt", "r");
+    fp = fopen(pread, "r");
     if (fp == NULL){
         printf("error opening file");
     }
@@ -15,7 +15,7 @@ void fprocess(const char * pread, const char * pwrite){
     }
     fscanf(fp, "%i%i%i%i", &x1, &y1, &x2, &y2);
     fclose(fp);
-    fp = fopen("pwrite.txt", "w");
+    fp = fopen(pwrite, "w");
     if (fp == NULL){
         printf("error opening file");
     }
