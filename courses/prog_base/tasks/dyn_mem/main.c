@@ -29,8 +29,7 @@ int main()
         }
         p++;
     }
-    p = str;
-    p = p + strlen(str);
+    p = str + strlen(str);
     while (p != NULL){
         if (*p >= 48 && *p <= 57 ){
             *l = (int) *p - 48;
