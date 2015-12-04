@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-int todec(int* p);
-
 int main()
 {
     char * str = NULL;
@@ -26,8 +24,7 @@ int main()
 
     while (p != NULL){
         if (*p >= 48 && *p <= 57 ){
-            *f = (int) *p;
-            todec(f);
+            *f = (int) *p - 48;
             break;
         }
         p++;
@@ -36,8 +33,7 @@ int main()
     p = p + strlen(str);
     while (p != NULL){
         if (*p >= 48 && *p <= 57 ){
-            *l = (int) *p;
-            todec(l);
+            *l = (int) *p - 48;
             break;
         }
         p--;
@@ -49,44 +45,5 @@ int main()
     free(f);
     free(l);
     free(m);
-    return 0;
-}
-
-int todec(int* p){
-    switch (*p){
-    case 48:
-        *p = 0;
-        break;
-    case 49:
-        *p = 1;
-        break;
-    case 50:
-        *p = 2;
-        break;
-    case 51:
-        *p = 3;
-        break;
-    case 52:
-        *p = 4;
-        break;
-    case 53:
-        *p = 5;
-        break;
-    case 54:
-        *p = 6;
-        break;
-    case 55:
-        *p = 7;
-        break;
-    case 56:
-        *p = 8;
-        break;
-    case 57:
-        *p = 9;
-        break;
-    default:
-        printf("error");
-        return 1;
-    }
     return 0;
 }
