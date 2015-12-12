@@ -1,0 +1,5 @@
+number of words in string '0' = 6
+number of words in string '1' = 2
+number of words in string '2' = 3
+number of words in string '3' = 2
+number of words in string '4' = 2
