@@ -31,16 +31,21 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
-		<Unit filename="libthread_windows.c">
-			<Option compilerVar="CC" />
-		</Unit>
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="modules.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="modules.h" />
+		<Unit filename="stack.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="stack.h" />
 		<Unit filename="thread.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="threadheader.h" />
+		<Unit filename="thread.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />

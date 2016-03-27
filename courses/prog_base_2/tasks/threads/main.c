@@ -1,43 +1,27 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-
 #include <windows.h>
-#include "threadheader.h"
+#include <conio.h>
+#include "modules.h"
+#include "stack.h"
 
-void * Producer(void * args) {
-    stack_t stack = (stack_t)args;
-    srand(time(NULL));
-    int num = rand() % 100;
 
-    while (1) {
-        mutex_lock(stack_returnMutex(stack));
-        num = rand() % 100;
-        stack_push(stack, num);
-        mutex_unlock(stack_returnMutex(stack));
-    }
-    return NULL;
-}
-
-void * Consumer(void * args) {
-    stack_t stack = (stack_t)args;
-    while (1) {
-        mutex_lock(stack_returnMutex(stack));
-        printf("Deleted element %i\n", stack_pop(stack));
-        mutex_unlock(stack_returnMutex(stack));
-        Sleep(2000);
-    }
-    return NULL;
-}
 
 int main(void) {
     srand(time(NULL));
     stack_t stack = stack_new();
-    thread_t * setter1 = thread_create_args(Producer, stack);
-    thread_t * writer = thread_create_args(Consumer, stack);
-    thread_join(writer);  // wait here
-    thread_free(setter1);
-    thread_free(writer);
-    stack_free(stack);
+    hMutex = CreateMutex(
+        NULL,
+        FALSE,
+        NULL);
+    HANDLE * first_thread = Producer_new(stack);
+    HANDLE * second_thread = Consumer_new(stack);
+    while (!_kbhit());
+    Producer_free(first_thread);
+    Consumer_free(second_thread);
+    CloseHandle(hMutex);
+    _getch();
+    system("cls");
     return 0;
 }

@@ -1,21 +1,31 @@
 # depslib dependency file v1.0
-1459014507 source:c:\files\institute\2 семестр\Основи програмування\tasks\threads\libthread_windows.c
-	<windows.h>
-	"threadheader.h"
-
-1459099608 c:\files\institute\2 семестр\Основи програмування\tasks\threads\threadheader.h
-
-1459099037 source:c:\files\institute\2 семестр\Основи програмування\tasks\threads\main.c
+1459106483 source:c:\files\institute\2 семестр\Основи програмування\tasks\threads\main.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
 	<windows.h>
-	"threadheader.h"
+	<conio.h>
+	"modules.h"
+	"stack.h"
 
-1459098785 source:c:\files\institute\2 семестр\Основи програмування\tasks\threads\thread.c
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	"threadheader.h"
+1459106483 c:\files\institute\2 семестр\Основи програмування\tasks\threads\modules.h
 	<windows.h>
+
+1459102403 c:\files\institute\2 семестр\Основи програмування\tasks\threads\stack.h
+
+1459106916 source:c:\files\institute\2 семестр\Основи програмування\tasks\threads\modules.c
+	"modules.h"
+	"stack.h"
+	"thread.h"
+	"time.h"
+
+1459105205 c:\files\institute\2 семестр\Основи програмування\tasks\threads\thread.h
+	<windows.h>
+	"stack.h"
+
+1459107553 source:c:\files\institute\2 семестр\Основи програмування\tasks\threads\stack.c
+	"stack.h"
+
+1459106979 source:c:\files\institute\2 семестр\Основи програмування\tasks\threads\thread.c
+	"thread.h"
 
