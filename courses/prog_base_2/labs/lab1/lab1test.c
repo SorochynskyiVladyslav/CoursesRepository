@@ -16,7 +16,8 @@ static void new_void_zeroCount(void **state)
 static void add_oneValue_countOne(void **state)
 {
     postsystem_t p = postsystem_new();
-    postsystem_add(p, 100, 6523, "AABY");
+    post_t po = post_new(170, 6523, "AABY");
+    postsystem_add(p, po);
     assert_int_equal(postsystem_getsize(p), 1);
     postsystem_destroy(p);
 }
@@ -24,8 +25,10 @@ static void add_oneValue_countOne(void **state)
 static void add_twoValues_countTwo(void **state)
 {
     postsystem_t p = postsystem_new();
-    postsystem_add(p, 100, 6523, "AABY");
-    postsystem_add(p, 150, 8413, "AOBI");
+    post_t po = post_new(100, 6523, "AABY");
+    post_t po1 = post_new(150, 8413, "AOBI");
+    postsystem_add(p, po);
+    postsystem_add(p, po1);
     assert_int_equal(postsystem_getsize(p), 2);
     postsystem_destroy(p);
 }
@@ -33,29 +36,37 @@ static void add_twoValues_countTwo(void **state)
 static void add_wrongValue_returnSpeedMistake(void **state)
 {
     postsystem_t p = postsystem_new();
-    assert_int_equal(postsystem_add(p, -170, 6523, "AABY"), RECORD_WRONGSPEED);
+    post_t po = post_new(-170, 6523, "AABY");
+    assert_int_equal(post_getstatus(po), RECORD_WRONGSPEED);
+    postsystem_add(p, po);
     postsystem_destroy(p);
 }
 
 static void add_wrongValue_returnNumberMistake(void **state)
 {
     postsystem_t p = postsystem_new();
-    assert_int_equal(postsystem_add(p, 170, 65423423, "AABY"), RECORD_WRONGNUMBER);
+    post_t po = post_new(170, 65745, "AABY");
+    assert_int_equal(post_getstatus(po), RECORD_WRONGNUMBER);
+    postsystem_add(p, po);
     postsystem_destroy(p);
 }
 
 static void add_wrongValue_returnSerialMistake(void **state)
 {
     postsystem_t p = postsystem_new();
-    assert_int_equal(postsystem_add(p, 170, 6523, "AABGFDY"), RECORD_WRONGSERIAL);
+    post_t po = post_new(170, 6523, "AAGSDFGBY");
+    assert_int_equal(post_getstatus(po), RECORD_WRONGSERIAL);
+    postsystem_add(p, po);
     postsystem_destroy(p);
 }
 
 static void remove_element_CountSize(void **state)
 {
     postsystem_t p = postsystem_new();
-    postsystem_add(p, 100, 6523, "AABY");
-    postsystem_add(p, 150, 8413, "AOBI");
+    post_t po = post_new(100, 6523, "AABY");
+    post_t po1 = post_new(150, 8413, "AOBI");
+    postsystem_add(p, po);
+    postsystem_add(p, po1);
     postsystem_remove(p, 0);
     assert_int_equal(postsystem_getsize(p), 1);
     postsystem_destroy(p);
