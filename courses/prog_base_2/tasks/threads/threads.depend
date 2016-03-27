@@ -3,16 +3,16 @@
 	<windows.h>
 	"threadheader.h"
 
-1459077923 c:\files\institute\2 семестр\Основи програмування\tasks\threads\threadheader.h
+1459099608 c:\files\institute\2 семестр\Основи програмування\tasks\threads\threadheader.h
 
-1459079005 source:c:\files\institute\2 семестр\Основи програмування\tasks\threads\main.c
+1459099037 source:c:\files\institute\2 семестр\Основи програмування\tasks\threads\main.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
 	<windows.h>
 	"threadheader.h"
 
-1459078861 source:c:\files\institute\2 семестр\Основи програмування\tasks\threads\thread.c
+1459098785 source:c:\files\institute\2 семестр\Основи програмування\tasks\threads\thread.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>

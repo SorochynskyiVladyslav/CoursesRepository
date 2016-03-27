@@ -47,6 +47,7 @@ int stack_pop (stack_t p) {
         return;
     }
     int val = p->arr[p->size];
+    p->stat = STACK_OK;
     p->size--;
     return val;
 }
