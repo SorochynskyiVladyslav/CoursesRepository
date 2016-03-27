@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1459014507 source:c:\files\institute\2 семестр\Основи програмування\tasks\threads\libthread_windows.c
+	<windows.h>
+	"threadheader.h"
+
+1459077923 c:\files\institute\2 семестр\Основи програмування\tasks\threads\threadheader.h
+
+1459079005 source:c:\files\institute\2 семестр\Основи програмування\tasks\threads\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<windows.h>
+	"threadheader.h"
+
+1459078861 source:c:\files\institute\2 семестр\Основи програмування\tasks\threads\thread.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"threadheader.h"
+	<windows.h>
+
