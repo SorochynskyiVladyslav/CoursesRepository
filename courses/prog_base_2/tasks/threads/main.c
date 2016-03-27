@@ -5,11 +5,6 @@
 #include <windows.h>
 #include "threadheader.h"
 
-typedef struct shared_s {
-    char sChar;
-    mutex_t * mu;
-} shared_t;
-
 void * Producer(void * args) {
     stack_t stack = (stack_t)args;
     srand(time(NULL));
