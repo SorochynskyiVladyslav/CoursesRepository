@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1459719673 source:c:\files\institute\2 семестр\Основи програмування\tasks\client\main.c
+	"client.h"
+
+1459717367 c:\files\institute\2 семестр\Основи програмування\tasks\client\client.h
+	<stdio.h>
+	<string.h>
+	<winsock2.h>
+	<windows.h>
+
