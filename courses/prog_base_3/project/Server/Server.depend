@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1459625819 source:c:\files\institute\2 семестр\course work\server\main.cpp
+	<iostream>
+	<io.h>
+	<stdio.h>
+	<winsock2.h>
+
