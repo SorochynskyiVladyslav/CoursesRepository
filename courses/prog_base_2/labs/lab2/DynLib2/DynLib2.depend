@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1459580010 source:c:\files\institute\2 семестр\Основи програмування\labs\lab2.libs\dynlib2\main.cpp
+	"main.h"
+	<stdio.h>
+
+1459576323 c:\files\institute\2 семестр\Основи програмування\labs\lab2.libs\dynlib2\main.h
+	<windows.h>
+	"queue.h"
+
+1459544053 c:\files\institute\2 семестр\Основи програмування\labs\lab2.libs\dynlib2\queue.h
+

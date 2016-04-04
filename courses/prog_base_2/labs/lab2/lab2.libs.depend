@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1459580336 source:c:\files\institute\2 семестр\Основи програмування\labs\lab2.libs\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"queue.h"
+	"dynamicLibs.h"
+
+1459544053 c:\files\institute\2 семестр\Основи програмування\labs\lab2.libs\queue.h
+
+1459578089 source:c:\files\institute\2 семестр\Основи програмування\labs\lab2.libs\dynamiclibs.c
+	"dynamicLibs.h"
+
+1459576969 c:\files\institute\2 семестр\Основи програмування\labs\lab2.libs\dynamiclibs.h
+	"queue.h"
+	<windows.h>
+
