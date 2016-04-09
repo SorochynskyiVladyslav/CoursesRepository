@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<teachers>
+    <teacher>
+        <name>Taras</name>
+        <surname>Shevchenko</surname>
+        <birthdate>1972-03-09</birthdate>
+        <chair name='PZKS'>
+            <faculty>FPM</faculty>
+        </chair>
+        <since>2009</since>
+        <rating>3.6</rating>
+    </teacher>
+    <teacher>
+        <name>Irina</name>
+        <surname>Kuzmenko</surname>
+        <birthdate>1974-09-09</birthdate>
+        <chair name='PM'>
+            <faculty>FPM</faculty>
+        </chair>
+        <since>2005</since>
+        <rating>4.0</rating>
+    </teacher>
+    <teacher>
+        <name>Ivan</name>
+        <surname>Ivanov</surname>
+        <birthdate>1986-03-13</birthdate>
+        <chair name='SPSCS'>
+            <faculty>FPM</faculty>
+        </chair>
+        <since>2013</since>
+        <rating>4.8</rating>
+    </teacher>
+</teachers>

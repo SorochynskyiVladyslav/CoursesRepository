@@ -1,0 +1,35 @@
+[
+    {
+        "name": "Taras",
+        "surname": "Shevchenko",
+        "birthdate": "1972-03-09",
+        "chair": {
+            "name": "PZKS",
+            "faculty": "FPM"
+        },
+        "since": 2009,
+        "rating": 4.6
+    },
+    {
+        "name": "Irina",
+        "surname": "Kuzmenko",
+        "birthdate": "1994-09-09",
+        "chair": {
+            "name": "PM",
+            "faculty": "FPM"
+        },
+        "since": 2005,
+        "rating": 4.0
+    },
+    {
+        "name": "Ivan",
+        "surname": "Ivanov",
+        "birthdate": "1986-03-13",
+        "chair": {
+            "name": "SPSCS",
+            "faculty": "FPM"
+        },
+        "since": 2013,
+        "rating": 4.8
+    }
+]
