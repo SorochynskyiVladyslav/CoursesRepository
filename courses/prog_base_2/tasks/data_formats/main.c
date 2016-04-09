@@ -1,23 +1,5 @@
 #include "head.h"
-#include <locale.h>
-#include <time.h>
 
-
-void printStudent (xmlNode * xSt) {
-    printf("\t%s\n", xSt->name);
-    for (xmlNode * xI = xSt->children; xI; xI = xI->next) {
-        if (XML_ELEMENT_NODE != xI->type) {
-            continue;
-        }
-        if (xmlStrcmp(xI->name, "group") == 0){
-            const char* groupName = xmlGetProp(xI, "name");
-            printf("\t\t%10s (name = %s) : \n", "group", groupName);
-            continue;
-        }
-        const char* contents = xmlNodeGetContent(xI);
-        printf("\t\t%10s : %s\n", xI->name, contents);
-    }
-}
 
 int main(void)
 {
@@ -42,18 +24,9 @@ int main(void)
     teacher_print(teachers[i]);
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
+    for (int i = 0; i < amount; i++) {
+        free(teachers[i]);
+    }
     fclose(fr);
 
     return 0;

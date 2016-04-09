@@ -8,6 +8,8 @@
 #include <windows.h>
 #include <libxml/parser.h>
 #include <libxml/tree.h>
+#include <locale.h>
+#include <time.h>
 
 #define TEXT_MAX_SIZE 1000
 #define LINE_MAX_SIZE 100
