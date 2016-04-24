@@ -42,6 +42,9 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="sqlite3.h" />
+		<Unit filename="teachers.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="teachers.h" />
 		<Extensions>
 			<code_completion />
