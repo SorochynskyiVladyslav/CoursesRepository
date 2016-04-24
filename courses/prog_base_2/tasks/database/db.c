@@ -167,7 +167,7 @@ int db_insertTeacher(db_t * self, teacher_t teacher) {
     newStudentId = (int) sqlite3_last_insert_rowid (self->db);
     printf("Last inserted row: %i\n", newStudentId);
     if(rc!=SQLITE_DONE) return -1;
-    sqlite3_finalize(stmt);
+    sqlite3_reset(stmt);
     return newStudentId;
 }
 
@@ -189,7 +189,7 @@ teacher_t db_getTeacherById(db_t * self, int id) {
     teacher_setSubjects(t, sqlite3_column_int(stmt, 3));
     teacher_setYears(t, sqlite3_column_int(stmt, 4));
     teacher_setBirthdate(t, (char *)sqlite3_column_text(stmt, 5));
-    sqlite3_finalize(stmt);
+    sqlite3_reset(stmt);
 
     return t;
 }
@@ -214,7 +214,7 @@ void teacher_update (db_t * self, teacher_t teacher) {
     sqlite3_bind_int(stmt, 7, id);
 
     sqlite3_step(stmt);
-    sqlite3_finalize(stmt);
+    sqlite3_reset(stmt);
 }
 
 void teacher_delete (db_t * self, teacher_t teacher) {
@@ -225,7 +225,7 @@ void teacher_delete (db_t * self, teacher_t teacher) {
     }
     sqlite3_bind_int(stmt, 1, teacher->id);
     sqlite3_step(stmt);
-    sqlite3_finalize(stmt);
+    sqlite3_reset(stmt);
 }
 
 

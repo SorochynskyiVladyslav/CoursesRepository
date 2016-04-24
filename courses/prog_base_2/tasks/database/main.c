@@ -24,10 +24,11 @@ int main()
     puts("Got by id:");
     teacher_print(t);
     db_insertTeacher(db, t);
-    t = db_getTeacherById(db, 6);
-    for (int i = 0; i < 10; i++) {
-       teacher_free(arr[i]);
-    }
-    teacher_free(t);
+    //t = db_getTeacherById(db, 6);
+    //teacher_delete (db, t);
+    t = db_getTeacherById(db, 2);
+    teacher_setId(t, 6);
+    teacher_update(db, t);
+    teacher_print(db_getTeacherById(db, 6));
     return 0;
 }
