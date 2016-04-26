@@ -1,0 +1,38 @@
+# depslib dependency file v1.0
+1461708989 source:c:\files\institute\2 семестр\Основи програмування\labs\lab3.callbacks\main.c
+	"supaDrive.h"
+	"test.h"
+	<windows.h>
+
+1461700952 source:c:\files\institute\2 семестр\Основи програмування\labs\lab3.callbacks\user.c
+	"user.h"
+
+1461700952 c:\files\institute\2 семестр\Основи програмування\labs\lab3.callbacks\user.h
+	<string.h>
+	<stdio.h>
+	<stdlib.h>
+
+1461704889 source:c:\files\institute\2 семестр\Основи програмування\labs\lab3.callbacks\file.c
+	"file.h"
+
+1461703758 c:\files\institute\2 семестр\Основи програмування\labs\lab3.callbacks\file.h
+	"user.h"
+
+1461708636 c:\files\institute\2 семестр\Основи програмування\labs\lab3.callbacks\supadrive.h
+	"file.h"
+	<time.h>
+
+1461708317 c:\files\institute\2 семестр\Основи програмування\labs\lab3.callbacks\test.h
+	"supaDrive.h"
+	<stdarg.h>
+	<stddef.h>
+	<setjmp.h>
+	<cmocka.h>
+
+1461708636 source:c:\files\institute\2 семестр\Основи програмування\labs\lab3.callbacks\supadrive.c
+	"supaDrive.h"
+
+1461708967 source:c:\files\institute\2 семестр\Основи програмування\labs\lab3.callbacks\test.c
+	"test.h"
+	"supaDrive.h"
+
