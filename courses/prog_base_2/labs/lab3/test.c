@@ -3,7 +3,7 @@
 
 void TestMessage (file_t file, SupaDrive_t drive) {
 }
-
+/*
 static void new_void_zeroCount(void **state)
 {
     SupaDrive_t drive = SupaDrive_new();
@@ -81,4 +81,4 @@ int test_SupaDrive(void)
         cmocka_unit_test(remove_File_countBytes),
     };
     return cmocka_run_group_tests(tests, NULL, NULL);
-}
+}*/

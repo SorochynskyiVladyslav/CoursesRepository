@@ -21,21 +21,78 @@ int SupaDrive_getBytes (SupaDrive_t self) {
     return self->bytes;
 }
 
-void SupaDrive_add (file_t file, SupaDrive_t drive, Callback cb[2], user_t users[]) {
+struct sub_s {
+    user_t user;
+    Callback cb[2];
+};
+
+sub_t sub_new (user_t us, Callback CB1, Callback CB2) {
+    sub_t self = malloc (sizeof(struct sub_s));
+    self->user = us;
+    self->cb[0] = CB1;
+    self->cb[1] = CB2;
+    return self;
+}
+
+void sub_free (sub_t sub) {
+    free(sub);
+}
+
+struct subList_s {
+    sub_t sub[MAX_SUBS];
+    int count;
+};
+
+subList_t subList_new () {
+    subList_t self = malloc(sizeof(struct subList_s));
+    self->count = 0;
+    return self;
+}
+
+void subList_subscride (subList_t subs, user_t user, Callback cb1, Callback cb2) {
+    sub_t sub = sub_new(user, cb1, cb2);
+    subs->sub[subs->count] = sub;
+    subs->count++;
+}
+
+void subList_unsubscride (subList_t subs, user_t user) {
+    if (subs->count == 0)
+        return;
+    int i = 0;
+    for (i = 0; i < subs->count; i++) {
+        if (subs->sub[i]->user == user)
+            break;
+    }
+    for (int j = i; i < subs->count; j++) {
+        subs->sub[j] = subs->sub[j+1];
+    }
+    subs->count--;
+}
+
+void subList_free(subList_t self) {
+    for (int i = 0; i < self->count; i++) {
+        sub_free(self->sub[i]);
+    }
+    free(self);
+}
+
+
+
+void SupaDrive_add (SupaDrive_t drive, subList_t subs, file_t file) {
     if (file_getBytes(file) + SupaDrive_getBytes(drive) <= MAX_BYTES){
         drive->files[drive->amount] = file;
         drive->amount++;
         drive->bytes += file_getBytes(file);
-        for (int i = 0; i < sizeof(users); i++) {
-            if (users[i] != file_getUser(file)) {
-                cb[0](users[i], file, drive);
+        for (int i = 0; i < subList_getCount(subs); i++) {
+            if (subs->sub[i]->user != file_getUser(file)) {
+                subs->sub[i]->cb[0](subs->sub[i]->user, file, drive);
             }
         }
     }
     else
-        for (int i = 0; i < sizeof(users); i++) {
-            if (users[i] != file_getUser(file)) {
-                cb[1](users[i], file, drive);
+        for (int i = 0; i < subList_getCount(subs); i++) {
+            if (subs->sub[i]->user != file_getUser(file)) {
+                subs->sub[i]->cb[1](subs->sub[i]->user, file, drive);
             }
         }
 }
@@ -77,4 +134,8 @@ void FailureMessage(user_t user, file_t file, SupaDrive_t drive) {
     int requiredSpace =  driveBytes + fileBytes - MAX_BYTES;
     printf(" %s got notification that %s failed to add file '%s' (%i bytes)\n Need %i additional bytes on SupaDrive\n\n",
            us, author, fileName, fileBytes, requiredSpace);
+}
+
+int subList_getCount (subList_t subs) {
+    return subs->count;
 }

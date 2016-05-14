@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1463150722 source:c:\files\institute\2 семестр\Основи програмування\labs\lab3.callbacks\main.c
+1463226722 source:c:\files\institute\2 семестр\Основи програмування\labs\lab3.callbacks\main.c
 	"supaDrive.h"
 	"test.h"
 	<windows.h>
 
-1461700952 source:c:\files\institute\2 семестр\Основи програмування\labs\lab3.callbacks\user.c
+1463219450 source:c:\files\institute\2 семестр\Основи програмування\labs\lab3.callbacks\user.c
 	"user.h"
 
 1461700952 c:\files\institute\2 семестр\Основи програмування\labs\lab3.callbacks\user.h
@@ -18,7 +18,7 @@
 1463149731 c:\files\institute\2 семестр\Основи програмування\labs\lab3.callbacks\file.h
 	"user.h"
 
-1463150503 c:\files\institute\2 семестр\Основи програмування\labs\lab3.callbacks\supadrive.h
+1463225958 c:\files\institute\2 семестр\Основи програмування\labs\lab3.callbacks\supadrive.h
 	"file.h"
 	<time.h>
 
@@ -29,10 +29,10 @@
 	<setjmp.h>
 	<cmocka.h>
 
-1463150658 source:c:\files\institute\2 семестр\Основи програмування\labs\lab3.callbacks\supadrive.c
+1463226245 source:c:\files\institute\2 семестр\Основи програмування\labs\lab3.callbacks\supadrive.c
 	"supaDrive.h"
 
-1463152120 source:c:\files\institute\2 семестр\Основи програмування\labs\lab3.callbacks\test.c
+1463225882 source:c:\files\institute\2 семестр\Основи програмування\labs\lab3.callbacks\test.c
 	"test.h"
 	"supaDrive.h"
 
