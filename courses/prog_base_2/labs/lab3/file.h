@@ -10,6 +10,7 @@ void file_free (file_t self);
 void file_print (file_t file);
 
 char* file_getAuthor (file_t self);
+user_t file_getUser (file_t self);
 char* file_getName (file_t self);
 int file_getBytes (file_t self);
 

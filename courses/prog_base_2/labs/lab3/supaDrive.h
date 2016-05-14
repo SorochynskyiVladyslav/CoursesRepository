@@ -8,14 +8,14 @@
 #include <time.h>
 
 typedef struct SupaDrive_s * SupaDrive_t;
-typedef void (*Callback) (file_t file, SupaDrive_t drive);
+typedef void (*Callback) (user_t user, file_t file, SupaDrive_t drive);
 
 SupaDrive_t SupaDrive_new ();
 void SupaDrive_free (SupaDrive_t self);
 int SupaDrive_getBytes (SupaDrive_t self);
-void SupaDrive_add (file_t file, SupaDrive_t drive, Callback func1, Callback func2);
+void SupaDrive_add (file_t file, SupaDrive_t drive, Callback cb[2], user_t users[]);
 file_t SupaDrive_delete (SupaDrive_t drive, file_t file);
-void SuccessMessage (file_t file, SupaDrive_t drive);
-void FailureMessage(file_t file, SupaDrive_t drive);
+void SuccessMessage (user_t user, file_t file, SupaDrive_t drive);
+void FailureMessage(user_t user, file_t file, SupaDrive_t drive);
 
 #endif // SUPADRIVE_H_INCLUDED

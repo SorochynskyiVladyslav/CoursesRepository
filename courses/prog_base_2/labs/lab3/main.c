@@ -7,9 +7,10 @@ int main()
     test_SupaDrive();
     puts("");
     srand(time(NULL));
-    Callback Success = &SuccessMessage;
-    Callback Failure = &FailureMessage;
     user_t users[4];
+    Callback cb[2];
+    cb[0] = &SuccessMessage;
+    cb[1] = &FailureMessage;
     users[0] = user_new("Vlad");
     users[1] = user_new("Ruslan");
     users[2] = user_new("Elena");
@@ -28,7 +29,7 @@ int main()
 
     for (int i = 0; i < 9; i++){
         Sleep(1000);
-        SupaDrive_add(files[i], drive, Success, Failure);
+        SupaDrive_add(files[i], drive, cb, users);
     }
 
     SupaDrive_free(drive);

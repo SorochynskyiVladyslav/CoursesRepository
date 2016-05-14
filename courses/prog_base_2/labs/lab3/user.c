@@ -19,3 +19,4 @@ char* user_getName (user_t self) {
     char* name = self->name;
     return name;
 }
+

@@ -22,6 +22,10 @@ char* file_getAuthor (file_t self) {
     return  user_getName(self->author);
 }
 
+user_t file_getUser (file_t self) {
+    return self->author;
+}
+
 char* file_getName (file_t self) {
     char* name = self->name;
     return name;
