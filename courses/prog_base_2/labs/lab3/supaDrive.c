@@ -2,18 +2,21 @@
 
 struct SupaDrive_s {
     file_t files[MAX_FILES];
+    subList_t subs;
     int amount;
     int bytes;
 };
 
 SupaDrive_t SupaDrive_new () {
     SupaDrive_t self = malloc(sizeof(struct SupaDrive_s));
+    self->subs = subList_new();
     self->amount = 0;
     self->bytes = 0;
     return self;
 }
 
 void SupaDrive_free (SupaDrive_t self) {
+    subList_free(self->subs);
     free(self);
 }
 
@@ -49,10 +52,10 @@ subList_t subList_new () {
     return self;
 }
 
-void subList_subscride (subList_t subs, user_t user, Callback cb1, Callback cb2) {
+void SupaDrive_subscride (SupaDrive_t drive, user_t user, Callback cb1, Callback cb2) {
     sub_t sub = sub_new(user, cb1, cb2);
-    subs->sub[subs->count] = sub;
-    subs->count++;
+    drive->subs->sub[drive->subs->count] = sub;
+    drive->subs->count++;
 }
 
 void subList_unsubscride (subList_t subs, user_t user) {
@@ -78,21 +81,21 @@ void subList_free(subList_t self) {
 
 
 
-void SupaDrive_add (SupaDrive_t drive, subList_t subs, file_t file) {
+void SupaDrive_add (SupaDrive_t drive, file_t file) {
     if (file_getBytes(file) + SupaDrive_getBytes(drive) <= MAX_BYTES){
         drive->files[drive->amount] = file;
         drive->amount++;
         drive->bytes += file_getBytes(file);
-        for (int i = 0; i < subList_getCount(subs); i++) {
-            if (subs->sub[i]->user != file_getUser(file)) {
-                subs->sub[i]->cb[0](subs->sub[i]->user, file, drive);
+        for (int i = 0; i < subList_getCount(drive->subs); i++) {
+            if (drive->subs->sub[i]->user != file_getUser(file)) {
+                drive->subs->sub[i]->cb[0](drive->subs->sub[i]->user, file, drive);
             }
         }
     }
     else
-        for (int i = 0; i < subList_getCount(subs); i++) {
-            if (subs->sub[i]->user != file_getUser(file)) {
-                subs->sub[i]->cb[1](subs->sub[i]->user, file, drive);
+        for (int i = 0; i < subList_getCount(drive->subs); i++) {
+            if (drive->subs->sub[i]->user != file_getUser(file)) {
+                drive->subs->sub[i]->cb[1](drive->subs->sub[i]->user, file, drive);
             }
         }
 }

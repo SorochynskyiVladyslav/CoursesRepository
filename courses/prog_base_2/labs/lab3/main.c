@@ -14,10 +14,11 @@ int main()
     users[1] = user_new("Ruslan");
     users[2] = user_new("Elena");
     users[3] = user_new("Viktor");
+    SupaDrive_t drive = SupaDrive_new();
 
     subList_t subscriders = subList_new();
     for (int i = 0; i < 4; i++) {
-        subList_subscride(subscriders, users[i], cb1, cb2);
+        SupaDrive_subscride(drive, users[i], cb1, cb2);
     }
 
     file_t files[9];
@@ -30,11 +31,11 @@ int main()
     files[6] = file_new ("File7", users[rand()%4], rand()%101+100);
     files[7] = file_new ("File8", users[rand()%4], rand()%101+100);
     files[8] = file_new ("File9", users[rand()%4], rand()%101+100);
-    SupaDrive_t drive = SupaDrive_new();
+
 
     for (int i = 0; i < 9; i++){
         Sleep(1000);
-        SupaDrive_add(drive, subscriders, files[i]);
+        SupaDrive_add(drive, files[i]);
     }
 
     SupaDrive_free(drive);
