@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1463352162 source:c:\files\institute\2 семестр\Основи програмування\tasks\window\main.c
+	<windows.h>
+	<tchar.h>
+	<stdio.h>
+	<CommCtrl.h>
+	"student.h"
+
+1463351483 source:c:\files\institute\2 семестр\Основи програмування\tasks\window\student.c
+	"student.h"
+
+1463350563 c:\files\institute\2 семестр\Основи програмування\tasks\window\student.h
+	<stdio.h>
+	<stdlib.h>
+
