@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1463827712 source:c:\files\institute\2 семестр\Основи програмування\kr1\lib\list.c
+	<stdlib.h>
+	"list.h"
+	"stock.h"
+
+1463826136 c:\files\institute\2 семестр\Основи програмування\kr1\lib\list.h
+	"stock.h"
+
+1463828808 c:\files\institute\2 семестр\Основи програмування\kr1\lib\stock.h
+	<string.h>
+	<stdio.h>
+	<time.h>
+	<stdlib.h>
+
+1463827669 source:c:\files\institute\2 семестр\Основи програмування\kr1\lib\main.c
+	"stock.h"
+	"list.h"
+
