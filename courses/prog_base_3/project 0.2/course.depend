@@ -1,6 +1,12 @@
 # depslib dependency file v1.0
-1462804837 source:c:\files\institute\2 семестр\course work\main.cpp
+1463939174 source:c:\files\institute\2 семестр\course work\main.cpp
 	<SFML/Graphics.hpp>
+	<list>
+	<iostream>
+	<vector>
+	"entity.h"
+	"level.h"
+	"view.h"
 
 1429780453 c:\program files (x86)\codeblocks\sfml\include\sfml\graphics.hpp
 	<SFML/Window.hpp>
@@ -381,4 +387,60 @@
 	<vector>
 
 1462721619 c:\files\institute\2 семестр\course work\hero.h
+
+1382940672 source:c:\files\institute\2 семестр\course work\tinystr.cpp
+	"tinystr.h"
+
+1382940672 c:\files\institute\2 семестр\course work\tinystr.h
+	<assert.h>
+	<string.h>
+
+1382940672 source:c:\files\institute\2 семестр\course work\tinyxml.cpp
+	<ctype.h>
+	<sstream>
+	<iostream>
+	"tinyxml.h"
+
+1382940672 c:\files\institute\2 семестр\course work\tinyxml.h
+	<ctype.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	<string>
+	<iostream>
+	<sstream>
+	"tinystr.h"
+
+1382940672 source:c:\files\institute\2 семестр\course work\tinyxmlerror.cpp
+	"tinyxml.h"
+
+1382940672 source:c:\files\institute\2 семестр\course work\tinyxmlparser.cpp
+	<ctype.h>
+	<stddef.h>
+	"tinyxml.h"
+	<windows.h>
+
+1463939032 c:\files\institute\2 семестр\course work\entity.h
+	<SFML/Graphics.hpp>
+	<string>
+	<vector>
+	<map>
+	<SFML/Graphics.hpp>
+	<iostream>
+	"level.h"
+	"view.h"
+	"tinyxml.h"
+	"tinystr.h"
+
+1463934492 c:\files\institute\2 семестр\course work\level.h
+	<string>
+	<vector>
+	<map>
+	<SFML/Graphics.hpp>
+	<iostream>
+	"tinyxml.h"
+
+1463936011 c:\files\institute\2 семестр\course work\view.h
+	<SFML/Graphics.hpp>
 
