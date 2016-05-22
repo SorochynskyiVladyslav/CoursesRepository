@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1463921323 source:c:\files\institute\2 семестр\Основи програмування\tasks\nlp\main.c
+	"nlp.h"
+
+1463921323 c:\files\institute\2 семестр\Основи програмування\tasks\nlp\nlp.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+
+1463921738 source:c:\files\institute\2 семестр\Основи програмування\tasks\nlp\nlp.c
+	"nlp.h"
+
