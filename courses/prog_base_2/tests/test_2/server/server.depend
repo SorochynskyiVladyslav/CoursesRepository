@@ -38,7 +38,7 @@
 	<winsock2.h>
 	"socket.h"
 
-1463802679 source:c:\files\institute\2 семестр\Основи програмування\kr2\server\cjson.c
+1463802679 source:d:\kr_2\server\cjson.c
 	<string.h>
 	<stdio.h>
 	<math.h>
@@ -48,23 +48,31 @@
 	<ctype.h>
 	"cJSON.h"
 
-1463802679 c:\files\institute\2 семестр\Основи програмування\kr2\server\cjson.h
+1463802679 d:\kr_2\server\cjson.h
 
-1464423191 source:c:\files\institute\2 семестр\Основи програмування\kr2\server\main.c
+1464432250 source:d:\kr_2\server\main.c
+	<stdlib.h>
+	<string.h>
+	"socket.h"
+	"server.h"
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"socket.h"
 	"server.h"
+	<winsock2.h>
+	<windows.h>
+	"cJSON.h"
+	<time.h>
 
-1464414254 c:\files\institute\2 семестр\Основи програмування\kr2\server\socket.h
+1464414254 d:\kr_2\server\socket.h
 
-1464422899 c:\files\institute\2 семестр\Основи програмування\kr2\server\server.h
+1464431871 d:\kr_2\server\server.h
 	<stdio.h>
 	<stdlib.h>
 	"socket.h"
 
-1464427538 source:c:\files\institute\2 семестр\Основи програмування\kr2\server\server.c
+1464432278 source:d:\kr_2\server\server.c
 	<stdio.h>
 	<stdlib.h>
 	<stddef.h>
@@ -73,7 +81,54 @@
 	"server.h"
 	"cJSON.h"
 
-1464414304 source:c:\files\institute\2 семестр\Основи програмування\kr2\server\socket.c
+1464414304 source:d:\kr_2\server\socket.c
 	<winsock2.h>
 	"socket.h"
+
+1463802680 source:c:\files\institute\2 семестр\Основи програмування\server\cjson.c
+	<string.h>
+	<stdio.h>
+	<math.h>
+	<stdlib.h>
+	<float.h>
+	<limits.h>
+	<ctype.h>
+	"cJSON.h"
+
+1463802680 c:\files\institute\2 семестр\Основи програмування\server\cjson.h
+
+1464414306 source:c:\files\institute\2 семестр\Основи програмування\server\socket.c
+	<winsock2.h>
+	"socket.h"
+
+1464414256 c:\files\institute\2 семестр\Основи програмування\server\socket.h
+
+1464433946 source:c:\files\institute\2 семестр\Основи програмування\server\main.c
+	<stdlib.h>
+	<string.h>
+	"socket.h"
+	"server.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"socket.h"
+	"server.h"
+	<winsock2.h>
+	<windows.h>
+	"cJSON.h"
+	<time.h>
+
+1464431872 c:\files\institute\2 семестр\Основи програмування\server\server.h
+	<stdio.h>
+	<stdlib.h>
+	"socket.h"
+
+1464433396 source:c:\files\institute\2 семестр\Основи програмування\server\server.c
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	"string.h"
+	"socket.h"
+	"server.h"
+	"cJSON.h"
 

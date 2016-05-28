@@ -58,7 +58,6 @@ void server_info(socket_t * client)
 
     cJSON * jInfo = cJSON_CreateObject();
     cJSON_AddItemToObject(jInfo, "student", cJSON_CreateString("Vlad Sorochynskyi"));
-    //cJSON_AddItemToObject(jInfo, "surname", cJSON_CreateString("Sorochynskyi"));
     cJSON_AddItemToObject(jInfo, "group", cJSON_CreateString("KP-52"));
     cJSON_AddItemToObject(jInfo, "variant", cJSON_CreateNumber(24));
     char * pageText = cJSON_Print(jInfo);
@@ -69,4 +68,15 @@ void server_info(socket_t * client)
             "Content-Length: %zu\n"
             "\n%s", strlen(pageText), pageText);
     socket_write(client, homeBuf,sizeof(homeBuf));
+}
+
+
+void server_sent(socket_t* clientSocket, char* text)
+{
+    char buf[10000];
+    sprintf(buf,"\nHTTP1.1 200 OK\n"
+    "Content-Type: application/json\n"
+    "Content-Length: %i\r\n\r\n"
+    "%s\n",strlen(text),text);
+    socket_write_string(clientSocket,buf);
 }
