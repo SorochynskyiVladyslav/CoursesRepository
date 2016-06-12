@@ -1,4 +1,5 @@
 #include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
 #include <list>
 #include <iostream>
 #include <vector>
@@ -8,26 +9,57 @@
 
 using namespace sf;
 
+
+void menu (RenderWindow & window) {
+
+}
+
+
 int main()
 {
-    RenderWindow window(sf::VideoMode(1024, 768), "Mario 0.1");
+    RenderWindow window(sf::VideoMode(1024, 768), "Mario 0.5");
     view.reset(FloatRect(0, 0, 700, 600));
 
     Level lvl;
-    lvl.LoadFromFile("lev1.tmx");
+    lvl.LoadFromFile("level2.tmx");
+
+    SoundBuffer coinBuffer;
+    coinBuffer.loadFromFile("sounds/coin.wav");
+    Sound coinSound;
+    coinSound.setBuffer(coinBuffer);
+    SoundBuffer deathBuffer;
+    deathBuffer.loadFromFile("sounds/mariodie.wav");
+    Sound deathSound;
+    deathSound.setBuffer(deathBuffer);
 
     Image heroImage;
     heroImage.loadFromFile("images/mario.png");
     heroImage.createMaskFromColor(Color(255, 255, 255));
     Image easyEnemyImage;
-    easyEnemyImage.loadFromFile("images/enemies.png");
+    easyEnemyImage.loadFromFile("images/EasyEnemy.png");
+    easyEnemyImage.createMaskFromColor(Color(255, 255, 255));
+    Image coinImage;
+    coinImage.loadFromFile("images/coin.png");
+    coinImage.createMaskFromColor(Color(255, 255, 255));
+    Image mediumEnemyImage;
+    mediumEnemyImage.loadFromFile("images/MediumEnemy.png");
+    mediumEnemyImage.createMaskFromColor(Color(255, 255, 255));
 
     std::list<Entity*> entities;
     std::list<Entity*>::iterator it;
     std::list<Entity*>::iterator it2;
+
     std::vector<Object> e = lvl.GetObjects("EasyEnemy");
     for (int i = 0; i < e.size(); i++) {
-        entities.push_back(new Enemy(easyEnemyImage, "EasyEnemy", lvl, e[i].rect.left, e[i].rect.top, 15, 15));
+        entities.push_back(new Enemy(easyEnemyImage, "EasyEnemy", lvl, e[i].rect.left, e[i].rect.top, 15, 25));
+    }
+    e = lvl.GetObjects("coin");
+    for (int i = 0; i < e.size(); i++) {
+        entities.push_back(new Coin(coinImage, "coin", lvl, e[i].rect.left, e[i].rect.top, 15, 15));
+    }
+    e = lvl.GetObjects("MediumEnemy");
+    for (int i = 0; i < e.size(); i++) {
+        entities.push_back(new Enemy(mediumEnemyImage, "MediumEnemy", lvl, e[i].rect.left, e[i].rect.top, 16, 24));
     }
 
     Object player = lvl.GetObject("player");
@@ -74,13 +106,28 @@ int main()
 				}
 			}
             if ((*it)->getRect().intersects(p.getRect())) {
-                if ((*it)->name == "EasyEnemy") {
+                if ((*it)->name == "EasyEnemy" || (*it)->name == "MediumEnemy") {
                     if ((p.dy>0) && (p.onGround == false) && (p.y + p.height < (*it)->y + (*it)->height)) {
-                        (*it)->dx = 0;
-                        p.dy = -0.2;
-                        (*it)->lives = 0;
+                        p.dy = -0.3;
+                        (*it)->lives--;
+                        if ((*it)->name == "EasyEnemy")
+                            (*it)->sprite.setTextureRect(IntRect(60, 8, 16, 8));
+                        p.Score++;
                     }
-                    else { p.x = player.rect.left; p.y = player.rect.top;}
+                    else {
+                        if (((*it)->lives != 0)) {
+                            deathSound.play();
+                            p.lives--;
+                            p.x = player.rect.left;
+                            p.y = player.rect.top;
+                            }
+                        }
+                }
+
+                if ((*it)->name == "coin") {
+                    p.Score++;
+                    coinSound.play();
+                    (*it)->life = false;
                 }
             }
             for (it2 = entities.begin(); it2 != entities.end(); it2++) {
@@ -98,12 +145,11 @@ int main()
 
 
 		window.setView(view);
-		window.clear();
+		window.clear(Color(167, 207, 218));
 		lvl.Draw(window);
 
 
         for (it = entities.begin(); it != entities.end(); it++) {
-
             window.draw((*it)->sprite);
 		}
 
