@@ -117,10 +117,10 @@ bool startGame (int & startLevel, RenderWindow & window, int & lives) {
             lvl.LoadFromFile("level1.tmx");
             break;
         case 2:
-            lvl.LoadFromFile("level1.tmx");
+            lvl.LoadFromFile("level2.tmx");
             break;
         case 3:
-            lvl.LoadFromFile("level1.tmx");
+            lvl.LoadFromFile("level3.tmx");
             break;
     }
     //lvl.LoadFromFile("level1.tmx");
