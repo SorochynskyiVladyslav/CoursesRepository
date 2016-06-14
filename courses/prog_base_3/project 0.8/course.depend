@@ -548,3 +548,69 @@
 	<SFML/Audio/Export.hpp>
 	<string>
 
+1465756945 source:c:\files\coursesrepository\courses\prog_base_3\project 0.8\main.cpp
+	<SFML/Graphics.hpp>
+	<SFML/Audio.hpp>
+	<list>
+	<iostream>
+	<vector>
+	"entity.h"
+	"level.h"
+	"view.h"
+
+1465755869 c:\files\coursesrepository\courses\prog_base_3\project 0.8\entity.h
+	<SFML/Graphics.hpp>
+	<string>
+	<vector>
+	<map>
+	<SFML/Graphics.hpp>
+	<iostream>
+	"level.h"
+	"view.h"
+	"tinyxml.h"
+	"tinystr.h"
+
+1463934492 c:\files\coursesrepository\courses\prog_base_3\project 0.8\level.h
+	<string>
+	<vector>
+	<map>
+	<SFML/Graphics.hpp>
+	<iostream>
+	"tinyxml.h"
+
+1382940672 c:\files\coursesrepository\courses\prog_base_3\project 0.8\tinyxml.h
+	<ctype.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	<string>
+	<iostream>
+	<sstream>
+	"tinystr.h"
+
+1382940672 c:\files\coursesrepository\courses\prog_base_3\project 0.8\tinystr.h
+	<assert.h>
+	<string.h>
+
+1465735290 c:\files\coursesrepository\courses\prog_base_3\project 0.8\view.h
+	<SFML/Graphics.hpp>
+
+1382940672 source:c:\files\coursesrepository\courses\prog_base_3\project 0.8\tinystr.cpp
+	"tinystr.h"
+
+1382940672 source:c:\files\coursesrepository\courses\prog_base_3\project 0.8\tinyxml.cpp
+	<ctype.h>
+	<sstream>
+	<iostream>
+	"tinyxml.h"
+
+1382940672 source:c:\files\coursesrepository\courses\prog_base_3\project 0.8\tinyxmlerror.cpp
+	"tinyxml.h"
+
+1382940672 source:c:\files\coursesrepository\courses\prog_base_3\project 0.8\tinyxmlparser.cpp
+	<ctype.h>
+	<stddef.h>
+	"tinyxml.h"
+	<windows.h>
+
