@@ -1,6 +1,7 @@
 from RoutesCenter import RoutesCenter
 import pickle
 
+
 class Interface(object):
     def __init__(self):
         self.command = ""
@@ -42,6 +43,7 @@ class Interface(object):
     def get_city(self, city1, first_input):
         if first_input:
             self.string_arguments.append(input("Enter city 1: "))
+            return True
         else:
             while(True):
                 text = input("Enter city 2: ")

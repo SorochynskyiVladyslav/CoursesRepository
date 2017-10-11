@@ -34,8 +34,9 @@ class RoutesCenter(object):
         self.route_list.delete_bus(bus_id)
 
     def delete_route(self, route_id):
+        target_route = []
         target_route = self.route_list.get_route_by_id(route_id)
-        if len(target_route.get_buses) == 0:
+        if len(target_route.get_buses()) == 0:
             self.route_list.delete(route_id)
         else:
             print("Can't delete a route with buses")
