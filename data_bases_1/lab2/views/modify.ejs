@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab 2</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Data Base Lab 2</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li>
+                <form method="post" action="/search" class="navbar-form navbar-left">
+                <div class="form-group">
+                    <select class="form-control" name="search_type">
+                        <option value="no_word" selected>No word</option>
+                        <option value="full_phrase">Full Phrase</option>
+                    </select>
+                    <input name="search" type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div>
+    <p class="well">Welcome to Lab 2 (Data Bases). Author: Vladyslav Sorochynskyi KP-52. The topic is Cars (models, orders and retail stores)</p>
+</div>
+
+<form action="/modifyOrder/<%=order.supply_id%>" method="post">
+    <div class="form-group">
+        <label for="car_model">Car Model:</label>
+        <select class="form-control" name="car_model" required>
+            <option value="<%=order.car.model_id%>" selected><%=order.car.model_name%></option>
+            <%for (let i =0; i < cars.length; i++) {%>
+            <option value="<%=cars[i].model_id%>"><%=cars[i].model_name%></option>
+            <%}%>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="store">Store:</label>
+        <select class="form-control" name="store" required>
+            <option value="<%=order.store.store_id%>" selected><%=order.store.store_name%></option>
+            <%for (let i =0; i < stores.length; i++) {%>
+            <option value="<%=stores[i].store_id%>"><%=stores[i].store_name%></option>
+            <%}%>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="amount">Amount: </label>
+        <input name="amount" type="number" class="form-control" value="<%=order.amount%>" required>
+    </div>
+    <div class="form-group">
+        <label for="price">Price ($K): </label>
+        <input name="price" type="number" class="form-control" value="<%=order.price%>" required>
+    </div>
+        <button type="submit" class="btn btn-default">Modify Order</button>
+        <a href="/"><button class="btn btn-default">Return</button></a>
+</form>
+
+
+
+</body>
+</html>

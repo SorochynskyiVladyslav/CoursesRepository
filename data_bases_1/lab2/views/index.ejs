@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lab 2</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  </head>
+  <body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Data Base Lab 2</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/cars">Car Models</a></li>
+        <li><a href="/updateDimensions">Update Dimensions</a></li>
+        <li><a data-toggle="modal" data-target="#CreateOrder" href="#">Add Order</a></li>
+      </ul>
+      <form method="post" action="/search" class="navbar-form navbar-left">
+        <div class="form-group">
+          <select class="form-control" name="search_type">
+            <option value="no_word" selected>No word</option>
+            <option value="full_phrase">Full Phrase</option>
+          </select>
+          <input name="search" type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>
+    </div>
+  </nav>
+  <div>
+    <p class="well">Welcome to Lab 2 (Data Bases). Author: Vladyslav Sorochynskyi KP-52. The topic is Cars (models, orders and retail stores)</p>
+
+    <!--<a href="/writefile"><button>Write into Files</button></a>-->
+    <h3 style="text-align: center; padding: 15px">Table of Car Orders</h3>
+  </div>
+  <div>
+    <table class="table-bordered" id="car_table">
+      <thead>
+        <tr class="well">
+          <th></th>
+          <th>Car</th>
+          <th>Year of Release</th>
+          <th>Electro Car</th>
+          <th>Store</th>
+          <th>City</th>
+          <th>Amount</th>
+          <th>Price per each (K$)</th>
+        </tr>
+      </thead>
+      <tbody>
+      <%for (let i=0; i < orders.length; i++){%>
+        <tr>
+          <th><form  method="post" action="/deleteOrder">
+              <input type="hidden" name="supply_id" value="<%=orders[i].supply_id%>">
+              <button class="alert-danger">Delete</button>
+            </form>
+            <a href="/modifyOrder/<%=orders[i].supply_id%>"><button class="alert-info">Modify</button></a>
+          </th>
+          <th><%=orders[i].car.model_name%></th>
+          <th><%=orders[i].car.model_year%></th>
+          <th><%=orders[i].car.model_electro%></th>
+          <th><%=orders[i].store.store_name%></th>
+          <th><%=orders[i].store.store_city%></th>
+          <th><%=orders[i].amount%></th>
+          <th><%=orders[i].price%></th>
+        </tr>
+      <%}%>
+      </tbody>
+    </table>
+
+  </div>
+
+
+
+  <div id="CreateOrder" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Order Creation</h4>
+        </div>
+        <div class="modal-body">
+          <form action="/createOrder" method="post">
+            <div class="form-group">
+              <label for="car_model">Car Model:</label>
+              <select class="form-control" name="car_model" required>
+                <%for (let i =0; i < cars.length; i++) {%>
+                <option value="<%=cars[i].model_id%>"><%=cars[i].model_name%></option>
+                <%}%>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="store">Store:</label>
+              <select class="form-control" name="store" required>
+                  <%for (let i =0; i < stores.length; i++) {%>
+                <option value="<%=stores[i].store_id%>"><%=stores[i].store_name%></option>
+                  <%}%>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="amount">Amount: </label>
+              <input name="amount" type="number" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="price">Price ($K): </label>
+              <input name="price" type="number" class="form-control" required>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-default">Create Order</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+
+
+  </script>
+
+
+  </body>
+</html>
