@@ -1,0 +1,6 @@
+D:\Study\OOP (C Sharp)\Lab\lab4\lab4\bin\Release\lab4.exe.config
+D:\Study\OOP (C Sharp)\Lab\lab4\lab4\bin\Release\lab4.exe
+D:\Study\OOP (C Sharp)\Lab\lab4\lab4\bin\Release\lab4.pdb
+D:\Study\OOP (C Sharp)\Lab\lab4\lab4\obj\Release\lab4.exe
+D:\Study\OOP (C Sharp)\Lab\lab4\lab4\obj\Release\lab4.pdb
+D:\Study\OOP (C Sharp)\Lab\lab4\lab4\obj\Release\lab4.csprojResolveAssemblyReference.cache

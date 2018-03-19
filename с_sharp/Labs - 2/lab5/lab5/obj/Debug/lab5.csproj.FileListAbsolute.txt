@@ -1,0 +1,6 @@
+D:\Study\OOP (C Sharp)\Labs - 2\lab5\lab5\bin\Debug\lab5.exe.config
+D:\Study\OOP (C Sharp)\Labs - 2\lab5\lab5\bin\Debug\lab5.exe
+D:\Study\OOP (C Sharp)\Labs - 2\lab5\lab5\bin\Debug\lab5.pdb
+D:\Study\OOP (C Sharp)\Labs - 2\lab5\lab5\obj\Debug\lab5.csprojResolveAssemblyReference.cache
+D:\Study\OOP (C Sharp)\Labs - 2\lab5\lab5\obj\Debug\lab5.exe
+D:\Study\OOP (C Sharp)\Labs - 2\lab5\lab5\obj\Debug\lab5.pdb

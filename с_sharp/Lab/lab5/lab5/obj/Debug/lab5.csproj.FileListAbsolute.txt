@@ -1,0 +1,12 @@
+D:\Study\OOP (C Sharp)\Lab\lab5\lab5\bin\Debug\lab5.exe.config
+D:\Study\OOP (C Sharp)\Lab\lab5\lab5\bin\Debug\lab5.exe
+D:\Study\OOP (C Sharp)\Lab\lab5\lab5\bin\Debug\lab5.pdb
+D:\Study\OOP (C Sharp)\Lab\lab5\lab5\obj\Debug\MainWindow.baml
+D:\Study\OOP (C Sharp)\Lab\lab5\lab5\obj\Debug\MainWindow.g.cs
+D:\Study\OOP (C Sharp)\Lab\lab5\lab5\obj\Debug\App.g.cs
+D:\Study\OOP (C Sharp)\Lab\lab5\lab5\obj\Debug\lab5_MarkupCompile.cache
+D:\Study\OOP (C Sharp)\Lab\lab5\lab5\obj\Debug\lab5.g.resources
+D:\Study\OOP (C Sharp)\Lab\lab5\lab5\obj\Debug\lab5.Properties.Resources.resources
+D:\Study\OOP (C Sharp)\Lab\lab5\lab5\obj\Debug\lab5.csproj.GenerateResource.Cache
+D:\Study\OOP (C Sharp)\Lab\lab5\lab5\obj\Debug\lab5.exe
+D:\Study\OOP (C Sharp)\Lab\lab5\lab5\obj\Debug\lab5.pdb

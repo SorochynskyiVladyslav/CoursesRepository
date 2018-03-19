@@ -1,0 +1,6 @@
+D:\Study\OOP (C Sharp)\course\course\bin\Debug\course.exe.config
+D:\Study\OOP (C Sharp)\course\course\obj\Debug\course.csprojResolveAssemblyReference.cache
+D:\Study\OOP (C Sharp)\course\course\bin\Debug\course.exe
+D:\Study\OOP (C Sharp)\course\course\bin\Debug\course.pdb
+D:\Study\OOP (C Sharp)\course\course\obj\Debug\course.exe
+D:\Study\OOP (C Sharp)\course\course\obj\Debug\course.pdb

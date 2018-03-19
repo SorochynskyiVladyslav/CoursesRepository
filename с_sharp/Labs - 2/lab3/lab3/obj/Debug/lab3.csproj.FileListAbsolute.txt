@@ -1,0 +1,6 @@
+D:\Study\OOP (C Sharp)\Labs - 2\lab3\lab3\bin\Debug\lab3.exe.config
+D:\Study\OOP (C Sharp)\Labs - 2\lab3\lab3\bin\Debug\lab3.exe
+D:\Study\OOP (C Sharp)\Labs - 2\lab3\lab3\bin\Debug\lab3.pdb
+D:\Study\OOP (C Sharp)\Labs - 2\lab3\lab3\obj\Debug\lab3.csprojResolveAssemblyReference.cache
+D:\Study\OOP (C Sharp)\Labs - 2\lab3\lab3\obj\Debug\lab3.exe
+D:\Study\OOP (C Sharp)\Labs - 2\lab3\lab3\obj\Debug\lab3.pdb
