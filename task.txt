@@ -1,4 +1,6 @@
-2) Найти средний возраст людей в системе
+0) mongoimport --db sample users.json
+
+1) Найти средний возраст людей в системе
 request:
 db.users.aggregate({
     $group:
@@ -13,7 +15,7 @@ result:
     "avgAge" : 30.3886255924171
 }
 
-3) Найти средний возраст в штате Аляска
+2) Найти средний возраст в штате Аляска
 request:
 db.users.aggregate([
     {$match: {
@@ -31,7 +33,7 @@ result:
     "avgAge" : 31.5
 }
 
-4) Начиная от Math.ceil(avg + avg_alaska) найти первого человека с другом по имени Деннис
+3) Начиная от Math.ceil(avg + avg_alaska) найти первого человека с другом по имени Деннис
 request:
 db.users.aggregate([
     {$skip: 62},
@@ -62,7 +64,7 @@ result:
     ]
 }
 
-5) Найти людей из того же штата, что и предыдущий человек и посмотреть какой фрукт любят больше всего в этом штате (аггрегация)
+4) Найти людей из того же штата, что и предыдущий человек и посмотреть какой фрукт любят больше всего в этом штате (аггрегация)
 request:
 db.users.aggregate([
     {$match: {
@@ -77,7 +79,7 @@ result:
     "count" : 10
 }
 
-6) Найти саммого раннего зарегистрировавшегося пользователя с таким любимым фруктом
+5) Найти саммого раннего зарегистрировавшегося пользователя с таким любимым фруктом
 request:
 db.users.aggregate([
     {$project: {_id: 1, name: 1, favoriteFruit: 1, registered: 1}},
@@ -93,13 +95,13 @@ result:
     "favoriteFruit" : "apple"
 }
 
-7) Добавить этому пользовелю свойтво: { features: 'first apple eater' }
+6) Добавить этому пользовелю свойтво: { features: 'first apple eater' }
 request:
 db.users.update({_id: ObjectId("5adf3c1544abaca147cdd568")}, {$set: {features: "first apple eater"}})
 result:
 Updated 1 existing record(s) in 98ms
 
-8) Удалить всех любителей клубники (написать количество удаленных пользователей)
+7) Удалить всех любителей клубники (написать количество удаленных пользователей)
 request:
 db.users.remove({favoriteFruit:"strawberry"});
 result:
