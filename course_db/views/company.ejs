@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Єдиний реєстр підприємств, щодо яких порушено провадження у справі про банкрутство</title>
+    <link rel='stylesheet' href='/stylesheets/base.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.js"></script>
+    <script src="../scripts/main.js"></script>
+</head>
+
+<body>
+
+<div class="ui stackable attached menu">
+    <a class="item" href="/">Головна</a>
+    <%if (user && user.status == 'owner') {%>
+    <div class="ui simple dropdown item">
+        Управління <i class="dropdown icon"></i>
+        <div class="menu">
+            <a class="item" href="/references">Довідки</a>
+            <a class="item" href="/users">Користувачі</a>
+        </div>
+    </div>
+    <%}%>
+    <%if (!user){%>
+    <div class="right menu">
+        <a class="item" href="/sign/in">Увійти</a>
+        <a class="item" href="/sign/up">Зареєструватися</a>
+    </div>
+    <%} else {%>
+    <div class="right menu">
+        <h5 class="ui header item"><%=user.name%></h5>
+        <a class="item" href="/sign/out">Вийти</a>
+    </div>
+    <%}%>
+
+</div>
+
+<h2 class="ui center aligned header">Єдиний реєстр підприємств, щодо яких порушено провадження у справі про банкрутство</h2>
+<div class="ui container">
+    <form class="ui form" action="/edit_company/<%=company._id%>" method="post">
+        <h3 class="ui header">Код ЄДРПОУ: <%=company.code%></h3>
+        <div class="field">
+            <label>Назва компанії</label>
+            <input type="text" name="name" value=<%=company.name%>>
+        </div>
+        <div class="field">
+            <label>Адреса компанії</label>
+            <input type="text" name="address" value=<%=company.address%>>
+        </div>
+        <div class="field">
+            <label>Вид діяльності</label>
+            <input type="text" name="activity_type" value=<%=company.activity_type%>>
+        </div>
+        <div class="field">
+            <label>Тип власності</label>
+            <input type="text" name="ownership_type" value=<%=company.ownership_type%>>
+        </div>
+        <button class="ui button" type="submit">Зберегти</button>
+    </form>
+
+</div>
+
+
+</body>
+</html>

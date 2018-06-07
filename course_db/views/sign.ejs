@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Єдиний реєстр підприємств, щодо яких порушено провадження у справі про банкрутство</title>
+    <link rel='stylesheet' href='/stylesheets/base.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.js"></script>
+</head>
+
+<body>
+
+<div class="ui stackable attached menu">
+    <a class="item" href="/">Головна</a>
+    <div class="right menu">
+        <a class="item" href="/sign/in">Увійти</a>
+        <a class="item" href="/sign/up">Зареєструватися</a>
+    </div>
+</div>
+
+<h2 class="ui center aligned header">Єдиний реєстр підприємств, щодо яких порушено провадження у справі про банкрутство</h2>
+<%if (target == 'signUp'){%>
+<div class="ui container">
+    <% if (message.length > 0) { %>
+    <div class="ui error message">
+        <p><%=message%></p>
+    </div>
+    <% } %>
+    <form class="ui form" action="/sign/up" method="post">
+        <div class="field">
+            <label>Ім'я та Прізвище</label>
+            <input type="text" name="name" placeholder="Ім'я та Прізвище" required>
+        </div>
+        <div class="field">
+            <label>E-mail</label>
+            <input type="email" name="mail" placeholder="E-mail" required>
+        </div>
+        <div class="field">
+            <label>Пароль</label>
+            <input type="password" name="password" placeholder="Password" required>
+        </div>
+        <button class="ui button" type="submit">Зареєструватися</button>
+    </form>
+</div>
+<%}%>
+<%if (target == 'signIn'){%>
+<div class="ui container">
+    <% if (message.length > 0) { %>
+    <div class="ui error message">
+        <p><%=message%></p>
+    </div>
+    <% } %>
+    <form class="ui form" action="/sign/in" method="post">
+        <div class="field">
+            <label>E-mail</label>
+            <input type="email" name="mail" placeholder="E-mail" required>
+        </div>
+        <div class="field">
+            <label>Пароль</label>
+            <input type="password" name="password" placeholder="Password" required>
+        </div>
+        <button class="ui button" type="submit">Увійти</button>
+    </form>
+</div>
+<%}%>
+
+</body>
+
+</html>

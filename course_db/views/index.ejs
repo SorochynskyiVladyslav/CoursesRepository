@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Єдиний реєстр підприємств, щодо яких порушено провадження у справі про банкрутство</title>
+    <link rel='stylesheet' href='/stylesheets/base.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.js"></script>
+    <script src="../scripts/main.js"></script>
+  </head>
+
+  <body>
+
+  <div class="ui stackable attached menu">
+    <a class="item" href="/">Головна</a>
+    <%if (!user || user.status=='user'){%>
+    <div class="ui simple dropdown item">
+      Довідка <i class="dropdown icon"></i>
+      <div class="menu">
+        <a class="item" id="reference-status-button">Перегляд стану довідки</a>
+      </div>
+    </div>
+    <%}%>
+
+    <%if (user && user.status == 'owner') {%>
+    <div class="ui simple dropdown item">
+      Управління <i class="dropdown icon"></i>
+      <div class="menu">
+        <a class="item" href="/references">Довідки</a>
+        <a class="item" href="/users">Користувачі</a>
+        <a class="item" id="add_button">Додати підприємство</a>
+      </div>
+    </div>
+    <%}%>
+    <form class="ui icon input" id="search-form">
+      <input type="text" name="code" placeholder="Пошук за ЄДРПОУ">
+      <i class="search link icon" ></i>
+    </form>
+    <%if (!user){%>
+    <div class="right menu">
+      <a class="item" href="/sign/in">Увійти</a>
+      <a class="item" href="/sign/up">Зареєструватися</a>
+    </div>
+    <%} else {%>
+    <div class="right menu">
+      <h5 class="ui header item"><%=user.name%></h5>
+      <a class="item" href="/sign/out">Вийти</a>
+    </div>
+    <%}%>
+
+  </div>
+
+  <h2 class="ui center aligned header">Єдиний реєстр підприємств, щодо яких порушено провадження у справі про банкрутство</h2>
+  <div class="ui container">
+    <table class="ui celled table" id="companies-table">
+      <thead>
+      <tr>
+        <th>Назва</th>
+        <th>Адреса</th>
+        <th>Код ЄДРПОУ</th>
+        <th>Дата впровадження справи</th>
+        <th>Вид діяльності</th>
+        <th>Тип власності</th>
+        <%if (user && user.status == 'owner'){%>
+        <th>Видалити</th>
+        <th>Редагувати</th>
+        <%}%>
+        <%if (!user || user.status == 'user'){%>
+        <th>Замовити довідку</th>
+        <%}%>
+      </tr>
+      </thead>
+      <tbody>
+      <%for (let i=0; i < companies.length; i++){%>
+      <tr class="company-tr">
+        <td><%=companies[i].name%></td>
+        <td><%=companies[i].address%></td>
+        <td><%=companies[i].code%></td>
+        <td><%=companies[i].date.getDate()%>.<%=companies[i].date.getMonth() + 1%>.<%=companies[i].date.getFullYear()%></td>
+        <td><%=companies[i].activity_type%></td>
+        <td><%=companies[i].ownership_type%></td>
+        <%if (user && user.status == 'owner' ){%>
+        <td><button class="ui button delete-button"><i class="red trash icon"></i></button></td>
+        <td><a href="/edit_company/<%=companies[i]._id%>"><button class="ui button edit-button"><i class="blue edit icon"></i></button></a></td>
+        <%}%>
+        <%if (!user || user.status == 'user'){%>
+        <td><button class="ui button reference-button"><i class="blue file icon"></i></button></td>
+        <%}%>
+      </tr>
+      <%}%>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="ui small modal">
+    <h4 class="ui header">Додавання підприємства до реєстру</h4>
+    <div class="content">
+      <form class="ui form" id="add_form">
+        <div class="field">
+          <label>Код ЄДРПОУ</label>
+          <input type="number" min="10000000" max="99999999" name="code" placeholder="Код ЄДРПОУ(8-значне число)" required>
+        </div>
+        <div class="field">
+          <label>Назва компанії</label>
+          <input type="text" name="name" placeholder="Назва компанії" required>
+        </div>
+        <div class="field">
+          <label>Адреса компанії</label>
+          <input type="text" name="address" placeholder="Адреса компанії" required>
+        </div>
+        <div class="field">
+          <label>Вид діяльності</label>
+          <input type="text" name="activity_type" placeholder="Вид діяльності" required>
+        </div>
+        <div class="field">
+          <label>Тип власності</label>
+          <input type="text" name="ownership_type" placeholder="Тип власності" required>
+        </div>
+        <div class="actions">
+        <button class="ui green button" type="submit">Зберегти</button>
+        <div class="ui red cancel button">Скасувати</div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="ui mini modal" id="search-modal">
+    <h4 class="ui header">Результат пошуку</h4>
+    <div class="content">
+      <p id="search-message">Пошук не дав жодних результатів. Перевірте правильність введеного ЄДРПОУ підприємства.</p>
+    </div>
+    <div class="actions">
+    <div class="ui red cancel button">Закрити</div>
+    </div>
+  </div>
+
+  <div class="ui mini modal" id="reference-modal">
+    <h4 class="ui header">Довідка</h4>
+
+    <div class="content">
+      <form class="ui form" id="reference-status-form">
+          <div class="field">
+              <label>ID Довідки</label>
+              <input type="text" name="ref_id" placeholder="Введіть ID довідки" required>
+              </div>
+          <div class="field">
+              <button class="ui green button" type="submit">Пошук</button>
+          </div>
+      </form>
+      <p class="ui info message" id="reference-message">Довідку замовлено.</p>
+    </div>
+    <div class="actions">
+      <div class="ui green cancel button">Закрити</div>
+    </div>
+  </div>
+
+
+  </body>
+</html>

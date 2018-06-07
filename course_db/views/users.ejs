@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Єдиний реєстр підприємств, щодо яких порушено провадження у справі про банкрутство</title>
+    <link rel='stylesheet' href='/stylesheets/base.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.js"></script>
+    <script src="../scripts/main.js"></script>
+</head>
+
+<body>
+
+<div class="ui stackable attached menu">
+    <a class="item" href="/">Головна</a>
+
+    <%if (user && user.status == 'owner') {%>
+    <div class="ui simple dropdown item">
+        Управління <i class="dropdown icon"></i>
+        <div class="menu">
+            <a class="item" href="/references">Довідки</a>
+            <a class="item" href="/users">Користувачі</a>
+        </div>
+    </div>
+    <%}%>
+    <form class="ui icon input" id="search-form">
+        <input type="text" name="code" placeholder="Пошук за ЄДРПОУ">
+        <i class="search link icon" ></i>
+    </form>
+    <%if (!user){%>
+    <div class="right menu">
+        <a class="item" href="/sign/in">Увійти</a>
+        <a class="item" href="/sign/up">Зареєструватися</a>
+    </div>
+    <%} else {%>
+    <div class="right menu">
+        <h5 class="ui header item"><%=user.name%></h5>
+        <a class="item" href="/sign/out">Вийти</a>
+    </div>
+    <%}%>
+
+</div>
+
+<h2 class="ui center aligned header">Єдиний реєстр підприємств, щодо яких порушено провадження у справі про банкрутство</h2>
+<div class="ui container">
+    <%for (let i=0; i < users.length; i++){
+    if (user._id != users[i]._id){%>
+    <div class="ui segment">
+        <p class="description">Ім'я: <%=users[i].name%>. E-mail: <%=users[i].mail%></p>
+        <form class="ui form six wide column" action="/edit_user/<%=users[i]._id%>" method="get">
+            <div class="inline fields">
+                <div class="field">
+                    <label> Статус: </label>
+                    <select class="ui fluid dropdown" name="status">
+                        <option value="owner" <%if (users[i].status=="owner"){%>selected<%}%>>Держатель</option>
+                        <option value="user" <%if (users[i].status=="user"){%>selected<%}%>>Користувач</option>
+                    </select>
+                </div>
+                <div class="field"><button class="ui green button" type="submit">Зберегти статус</button></div>
+            </div>
+        </form>
+        <a href="/delete_user/<%=users[i]._id%>"><button class="ui red button">Видалити користувача</button></a>
+    </div>
+    <%}}%>
+</div>
+
+</body>
+</html>
